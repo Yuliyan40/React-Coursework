@@ -8,6 +8,7 @@ const Games = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "90vh",
+        marginLeft: "120px",
       }}
     >
       <h1>Games</h1>

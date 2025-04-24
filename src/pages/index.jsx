@@ -8,6 +8,7 @@ const Home = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "90vh",
+        marginLeft: "120px",
       }}
     >
       <h1>Home</h1>

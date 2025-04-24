@@ -10,19 +10,34 @@ const Navbar = () => {
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink to="/metal" activeStyle>
+          <NavLink
+            to="/metal"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Метъл
           </NavLink>
-          <NavLink to="/tvf" activeStyle>
+          <NavLink
+            to="/tvf"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             ТВ и филми
           </NavLink>
-          <NavLink to="/games" activeStyle>
+          <NavLink
+            to="/games"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Игри
           </NavLink>
-          <NavLink to="/anime" activeStyle>
+          <NavLink
+            to="/anime"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Аниме
           </NavLink>
-          <NavLink to="/register" activeStyle>
+          <NavLink
+            to="/register"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Регистрирай се
           </NavLink>
         </NavMenu>

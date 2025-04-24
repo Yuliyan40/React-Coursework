@@ -8,6 +8,7 @@ const Anime = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "90vh",
+        marginLeft: "120px",
       }}
     >
       <h1>Anime</h1>

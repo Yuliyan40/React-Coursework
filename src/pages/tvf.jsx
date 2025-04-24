@@ -8,6 +8,7 @@ const Tvf = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "90vh",
+        marginLeft: "120px",
       }}
     >
       <h1>Tvf</h1>
