@@ -1,4 +1,5 @@
 import React from "react";
+import Swiper_func from "./swiper";
 
 const Metal = () => {
   return (
@@ -11,7 +12,7 @@ const Metal = () => {
         marginLeft: "120px",
       }}
     >
-      <h1>Metal</h1>
+      <Swiper_func></Swiper_func>
     </div>
   );
 };
