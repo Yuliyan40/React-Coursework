@@ -10,6 +10,14 @@ import Tvf from "./pages/tvf";
 import Games from "./pages/games";
 import Anime from "./pages/anime";
 
+import A7XPage from "./pages/products/metalProd/Avenged Sevenfold/a7x";
+import KillswitchPage from "./pages/products/metalProd/Killswitch Engage/killswitch";
+import GodsmackPage from "./pages/products/metalProd/Godsmack/godsmack";
+import LinkinParkPage from "./pages/products/metalProd/Linkin Park/linkPark";
+import MetallicaPage from "./pages/products/metalProd/Metallica/metallica";
+import ParkwayPage from "./pages/products/metalProd/Parkway Drive/parkDrive";
+import TriviumPage from "./pages/products/metalProd/Trivium/triv";
+
 function App() {
   //const [count, setCount] = useState(0)
 
@@ -22,6 +30,14 @@ function App() {
         <Route path="/tvf" element={<Tvf />}></Route>
         <Route path="/games" element={<Games />}></Route>
         <Route path="/anime" element={<Anime />}></Route>
+
+        <Route path="/metal/a7x" element={<A7XPage />} />
+        <Route path="/metal/godsmack" element={<GodsmackPage />} />
+        <Route path="/metal/killswitch" element={<KillswitchPage />} />
+        <Route path="/metal/linkinpark" element={<LinkinParkPage />} />
+        <Route path="/metal/metallica" element={<MetallicaPage />} />
+        <Route path="/metal/parkway" element={<ParkwayPage />} />
+        <Route path="/metal/trivium" element={<TriviumPage />} />
       </Routes>
     </Router>
   );

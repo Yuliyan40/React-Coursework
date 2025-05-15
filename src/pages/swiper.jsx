@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -25,7 +25,7 @@ import gamesImages from "../assets/images/gamesImages.js";
 import animeImages from "../assets/images/animeImages.js";
 
 function Swiper_func() {
-  const location = useLocation(); // Извличаме текущия път
+  const location = useLocation(); // Извлича се текущият път
 
   let images;
 
@@ -65,7 +65,9 @@ function Swiper_func() {
         {images &&
           images.map((image, index) => (
             <SwiperSlide key={index}>
-              <img src={image} alt={`slide_image_${index}`} />
+              <Link to={image.route}>
+                <img src={image.src} alt={`slide_image_${index}`} />
+              </Link>
             </SwiperSlide>
           ))}
 

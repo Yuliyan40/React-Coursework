@@ -6,6 +6,14 @@ import metallica from './metal/metallica.jpg';
 import parkway from './metal/parkway.webp';
 import trivium from './metal/trivium.webp';
 
-const metalImages = [a7x, godsmack, killswitch, linkinPark, metallica, parkway, trivium];
+const metalImages = [
+    { src: a7x, route: "/metal/a7x" }, 
+    { src: godsmack, route: "/metal/godsmack" }, 
+    { src: killswitch, route: "/metal/killswitch" }, 
+    { src: linkinPark, route: "/metal/linkinpark" }, 
+    { src: metallica, route: "/metal/metallica" }, 
+    { src: parkway, route: "/metal/parkway" }, 
+    { src: trivium, route: "/metal/trivium" },
+];
 
 export default metalImages;

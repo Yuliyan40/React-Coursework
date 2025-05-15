@@ -1,0 +1,14 @@
+// Основни зависимости
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Само картите и бутоните
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/buttons";
+
+
+.card {
+  border: 8px solid rgb(131, 55, 55);
+  border-radius: 20px;
+}
