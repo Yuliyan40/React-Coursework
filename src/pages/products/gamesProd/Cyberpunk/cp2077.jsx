@@ -1,9 +1,9 @@
 import React from "react";
 import a7xImg from "../../../../assets/images/metal/a7x.jpg";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import "./custom-bootstrap.scss";
+import "./../../custom-bootstrap.scss";
 
-const A7XPage = () => {
+const CP2077Page = () => {
   return (
     <div
       style={{
@@ -33,4 +33,4 @@ const A7XPage = () => {
   );
 };
 
-export default A7XPage;
+export default CP2077Page;
