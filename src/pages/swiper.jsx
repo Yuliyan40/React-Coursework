@@ -19,20 +19,25 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 //import slide_image_6 from "../assets/images/parkway.webp";
 //import slide_image_7 from "../assets/images/trivium.webp";
 
-import metalImages from "../assets/images/metalImages";
+import metalImages from "../assets/images/metalImages.js";
+import tvfImages from "../assets/images/tvfImages.js";
+import gamesImages from "../assets/images/gamesImages.js";
+import animeImages from "../assets/images/animeImages.js";
 
 function Swiper_func() {
   const location = useLocation(); // Извличаме текущия път
 
   let images;
 
-  // В зависимост от текущия път, задаваме съответните изображения
   if (location.pathname === "/metal") {
-    images = metalImages; // Избиране на снимките за Metal
-  } //else if (location.pathname === "/anime") {
-  // Добави условие за други секции, като Anime, ако имаш
-  // images = animeImages;
-  //}
+    images = metalImages;
+  } else if (location.pathname === "/tvf") {
+    images = tvfImages;
+  } else if (location.pathname === "/games") {
+    images = gamesImages;
+  } else if (location.pathname === "/anime") {
+    images = animeImages;
+  }
 
   return (
     <div className="container">

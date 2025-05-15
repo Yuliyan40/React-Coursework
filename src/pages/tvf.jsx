@@ -1,4 +1,5 @@
 import React from "react";
+import Swiper_func from "./swiper";
 
 const Tvf = () => {
   return (
@@ -11,7 +12,7 @@ const Tvf = () => {
         marginLeft: "120px",
       }}
     >
-      <h1>Tvf</h1>
+      <Swiper_func></Swiper_func>
     </div>
   );
 };
