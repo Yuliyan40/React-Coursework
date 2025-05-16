@@ -4,7 +4,7 @@ import ProductPage from "./products";
 import allProducts from "./productsData";
 
 const DynamicProductPage = () => {
-  const { category, name } = useParams();
+  const { category, name: name } = useParams();
 
   const pageData = allProducts[category]?.[name];
 
