@@ -10,13 +10,13 @@ import Tvf from "./pages/tvf";
 import Games from "./pages/games";
 import Anime from "./pages/anime";
 
-import A7XPage from "./pages/products/metalProd/Avenged_Sevenfold/a7x";
-import KillswitchPage from "./pages/products/metalProd/Killswitch_Engage/killswitch";
-import GodsmackPage from "./pages/products/metalProd/Godsmack/godsmack";
-import LinkinParkPage from "./pages/products/metalProd/Linkin_Park/linkPark";
-import MetallicaPage from "./pages/products/metalProd/Metallica/metallica";
-import ParkwayPage from "./pages/products/metalProd/Parkway_Drive/parkDrive";
-import TriviumPage from "./pages/products/metalProd/Trivium/triv";
+// import A7XPage from "./pages/products/metalProd/Avenged_Sevenfold/a7x";
+// import KillswitchPage from "./pages/products/metalProd/Killswitch_Engage/killswitch";
+// import GodsmackPage from "./pages/products/metalProd/Godsmack/godsmack";
+// import LinkinParkPage from "./pages/products/metalProd/Linkin_Park/linkPark";
+// import MetallicaPage from "./pages/products/metalProd/Metallica/metallica";
+// import ParkwayPage from "./pages/products/metalProd/Parkway_Drive/parkDrive";
+// import TriviumPage from "./pages/products/metalProd/Trivium/triv";
 
 import DNPage from "./pages/products/animeProd/Death_Note/dn";
 import NarutoPage from "./pages/products/animeProd/Naruto/naruto";
@@ -42,6 +42,8 @@ import FlashPage from "./pages/products/tvfProd/TheFlash/flash";
 import OfficePage from "./pages/products/tvfProd/TheOffice/office";
 import BreakingPage from "./pages/products/tvfProd/BreakingBad/breaking";
 
+import DynamicProductPage from "./pages/products/dynamicProducts";
+
 function App() {
   //const [count, setCount] = useState(0)
 
@@ -55,13 +57,14 @@ function App() {
         <Route path="/games" element={<Games />}></Route>
         <Route path="/anime" element={<Anime />}></Route>
 
+        {/* 
         <Route path="/metal/a7x" element={<A7XPage />} />
         <Route path="/metal/godsmack" element={<GodsmackPage />} />
         <Route path="/metal/killswitch" element={<KillswitchPage />} />
         <Route path="/metal/linkinpark" element={<LinkinParkPage />} />
         <Route path="/metal/metallica" element={<MetallicaPage />} />
         <Route path="/metal/parkway" element={<ParkwayPage />} />
-        <Route path="/metal/trivium" element={<TriviumPage />} />
+        <Route path="/metal/trivium" element={<TriviumPage />} /> */}
 
         <Route path="/anime/death_note" element={<DNPage />} />
         <Route path="/anime/naruto" element={<NarutoPage />} />
@@ -86,6 +89,8 @@ function App() {
         <Route path="/tvf/the_flash" element={<FlashPage />} />
         <Route path="/tvf/the_office" element={<OfficePage />} />
         <Route path="/tvf/breaking_bad" element={<BreakingPage />} />
+
+        <Route path="/:category/:name" element={<DynamicProductPage />} />
       </Routes>
     </Router>
   );
