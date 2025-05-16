@@ -9,7 +9,20 @@ const DynamicProductPage = () => {
   const pageData = allProducts[category]?.[name];
 
   if (!pageData) {
-    return <div>Продуктите не са намерени...</div>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "90vh",
+          marginLeft: "120px",
+          flexDirection: "column",
+        }}
+      >
+        Продуктите не са намерени...
+      </div>
+    );
   }
 
   return <ProductPage products={pageData.products} title={pageData.title} />;
