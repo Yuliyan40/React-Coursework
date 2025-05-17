@@ -43,8 +43,8 @@ import Anime from "./pages/anime";
 // import BreakingPage from "./pages/products/tvfProd/BreakingBad/breaking";
 
 import DynamicProductPage from "./pages/products/dynamicProducts";
-import SignInSide from "./sign-in-side/SignInSide";
-//import SignInSide from "./pages/register";
+import Register from "./register";
+import LogIn from "./login";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -59,7 +59,10 @@ function App() {
         <Route path="/games" element={<Games />}></Route>
         <Route path="/anime" element={<Anime />}></Route>
 
-        <Route path="/register" element={<SignInSide />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<LogIn />} />
+
+        <Route path="/:category/:name" element={<DynamicProductPage />} />
 
         {/* 
         <Route path="/metal/a7x" element={<A7XPage />} />
@@ -96,8 +99,6 @@ function App() {
         <Route path="/tvf/the_flash" element={<FlashPage />} />
         <Route path="/tvf/the_office" element={<OfficePage />} />
         <Route path="/tvf/breaking_bad" element={<BreakingPage />} /> */}
-
-        <Route path="/:category/:name" element={<DynamicProductPage />} />
       </Routes>
     </Router>
   );

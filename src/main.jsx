@@ -16,5 +16,16 @@ Swiper
 react-use-cart
 sass и bootstrap
 Material UI
+json-server
+axios
+
+The following functionalities are to be used in the developing of the application:
+1.	Components ✅
+2.	Routing ✅
+3.	Forms ✅
+4.	Hooks ✅
+5.	REST API ✅
+6.	GitHub ✅
+
 
 */
