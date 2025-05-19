@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./elements";
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/login");
+  };
+
   return (
     <>
       <Nav>
@@ -34,15 +51,32 @@ const Navbar = () => {
           >
             Аниме
           </NavLink>
-          <NavLink
-            to="/register"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            Регистрирай се
-          </NavLink>
+
+          {user ? (
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              {user.name}
+            </NavLink>
+          ) : (
+            <NavLink
+              to="/register"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Регистрирай се
+            </NavLink>
+          )}
         </NavMenu>
+
         <NavBtn>
-          <NavBtnLink to="/login">Влез</NavBtnLink>
+          {user ? (
+            <NavBtnLink as="button" onClick={handleLogout}>
+              Излез
+            </NavBtnLink>
+          ) : (
+            <NavBtnLink to="/login">Влез</NavBtnLink>
+          )}
         </NavBtn>
       </Nav>
     </>

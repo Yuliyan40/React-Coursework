@@ -2,6 +2,7 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import "./App.css";
+import React, { useState } from "react";
 import Navbar from "./assets/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages";
@@ -45,13 +46,14 @@ import Anime from "./pages/anime";
 import DynamicProductPage from "./pages/products/dynamicProducts";
 import Register from "./register";
 import LogIn from "./login";
+import Profile from "./profile";
 
 function App() {
-  //const [count, setCount] = useState(0)
+  const [userChanged, setUserChanged] = useState(false);
 
   return (
     <Router>
-      <Navbar />
+      <Navbar key={userChanged} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/metal" element={<Metal />}></Route>
@@ -60,7 +62,11 @@ function App() {
         <Route path="/anime" element={<Anime />}></Route>
 
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<LogIn />} />
+        <Route
+          path="/login"
+          element={<LogIn onLogin={() => setUserChanged((prev) => !prev)} />}
+        />
+        <Route path="/profile" element={<Profile />} />
 
         <Route path="/:category/:name" element={<DynamicProductPage />} />
 

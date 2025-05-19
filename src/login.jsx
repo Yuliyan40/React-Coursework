@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Paper,
@@ -12,13 +12,45 @@ import {
   Box,
   Link,
 } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import axios from "axios";
 
-const LogIn = () => {
-  const handleSubmit = (event) => {
+const LogIn = ({ onLogin }) => {
+  const navigate = useNavigate();
+
+  const [credentials, setCredentials] = useState({ name: "", password: "" });
+  const [error, setError] = useState("");
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setCredentials((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("login");
+    setError("");
+
+    try {
+      const res = await axios.get("http://localhost:5000/users");
+
+      const user = res.data.find(
+        (us) =>
+          us.name === credentials.name && us.password === credentials.password
+      );
+
+      if (user) {
+        localStorage.setItem("user", JSON.stringify(user)); // записва се влезналият потребител в конкретната сесия
+        alert("Успешен вход!");
+        if (onLogin) onLogin();
+        navigate("/");
+      } else {
+        setError("Грешно име или парола :(");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Възникна грешка при влизането в акаунта");
+    }
   };
 
   return (
@@ -29,7 +61,6 @@ const LogIn = () => {
           marginTop: 8,
           padding: 2,
           bgcolor: "#8a0606",
-          fontSize: 12,
           color: "white",
           display: "flex",
           flexDirection: "column",
@@ -41,7 +72,6 @@ const LogIn = () => {
           sx={{
             mx: "auto",
             bgcolor: "grey",
-            textAlign: "center",
             mb: 1,
             width: 70,
             height: 70,
@@ -56,12 +86,15 @@ const LogIn = () => {
         >
           Влез
         </Typography>
+
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
             placeholder="Въведи име"
             fullWidth
             required
-            autoFocus
+            name="name"
+            value={credentials.name}
+            onChange={handleChange}
             sx={{
               mb: 2,
               "& .MuiInputBase-input": { color: "white", fontSize: "2rem" },
@@ -72,13 +105,16 @@ const LogIn = () => {
             fullWidth
             required
             type="password"
+            name="password"
+            value={credentials.password}
+            onChange={handleChange}
             sx={{
               mb: 2,
               "& .MuiInputBase-input": { color: "white", fontSize: "2rem" },
             }}
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
+            control={<Checkbox color="primary" />}
             label="Запомни ме"
             sx={{
               "& .MuiFormControlLabel-label": {
@@ -86,6 +122,11 @@ const LogIn = () => {
               },
             }}
           />
+          {error && (
+            <Typography color="error" sx={{ mb: 2, fontSize: "1.4rem" }}>
+              {error}
+            </Typography>
+          )}
           <Button
             type="submit"
             variant="contained"
