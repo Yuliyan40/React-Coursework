@@ -7,21 +7,22 @@ export const Nav = styled.nav`
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding: 0.9rem calc((100vw - 1000px) / 2);
-  gap: 0.8rem;
+  padding: 0.9rem calc((100vw - 1000px) / 2.4);
+  gap: 6rem;
   z-index: 10;
 `;
 
 export const NavLink = styled(Link)`
   color: #fff;
   background-color: #b50e02;
-  border-radius: 13px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  white-space: nowrap;
 
   &.active {
     color: rgb(247, 183, 6);
@@ -49,7 +50,8 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 65px;
+  margin-left: 13px;
+  gap: 1.9rem;
 
   @media screen and (max-width: 768px) {
     display: none;

@@ -41,7 +41,7 @@ const ProductPage = ({ products, title }) => {
         flexDirection: "column",
       }}
     >
-      <h1>{title}</h1>
+      <h1 className="prodTitle">{title}</h1>
       <br />
       <div
         className="product-grid"

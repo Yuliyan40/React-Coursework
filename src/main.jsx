@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
 
 styled-components
 Swiper
-react-use-cart
+react-use-cart (неизползван)
 sass и bootstrap
 Material UI
 json-server

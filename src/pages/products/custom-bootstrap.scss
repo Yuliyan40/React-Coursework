@@ -7,7 +7,6 @@
 @import "bootstrap/scss/card";
 @import "bootstrap/scss/buttons";
 
-
 .card {
   border: 8px solid rgb(131, 55, 55);
   border-radius: 20px;
@@ -20,4 +19,10 @@
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .prodTitle {
+    display: none;
   }
+}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./elements";
+//import logo from "../../pages/teecraze.png";
+import "../../pages/shirts.css";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -23,7 +25,7 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLink to="/">
-          <h1>Logo</h1>
+          <h2>TeeCraze</h2>
         </NavLink>
         <Bars />
         <NavMenu>
