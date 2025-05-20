@@ -7,5 +7,27 @@
       "password": "alo123",
       "remember": true
     }
+  ],
+  "orders": [
+    {
+      "id": "490e",
+      "name": "Blade Runner 1",
+      "date": "2025-05-20T15:48:43.496Z"
+    },
+    {
+      "id": "30b8",
+      "name": "DOOM 3",
+      "date": "2025-05-20T15:57:35.643Z"
+    },
+    {
+      "id": "efb8",
+      "name": "Breaking Bad 1",
+      "date": "2025-05-20T15:58:18.170Z"
+    },
+    {
+      "id": "2a7c",
+      "name": "Spider-Man 3",
+      "date": "2025-05-20T16:43:57.201Z"
+    }
   ]
 }

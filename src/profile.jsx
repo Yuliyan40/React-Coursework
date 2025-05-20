@@ -11,7 +11,15 @@ const Profile = () => {
   }, []);
 
   return (
-    <div style={{ padding: "2rem", fontSize: "2rem" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "90vh",
+        marginLeft: "120px",
+      }}
+    >
       {user ? <p>Здравей, {user.name}!</p> : <p>Не си логнат.</p>}
     </div>
   );

@@ -1,7 +1,35 @@
 import React from "react";
 import "./custom-bootstrap.scss";
+import { useNavigate } from "react-router-dom";
 
 const ProductPage = ({ products, title }) => {
+  const navigate = useNavigate();
+
+  const handlePurchase = async (productName) => {
+    const newOrder = {
+      name: productName,
+      date: new Date().toISOString(),
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/orders", {
+        method: "POST", // създава се поръчка
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newOrder),
+      });
+
+      if (response.ok) {
+        navigate("/purchase", { state: { shirtName: productName } });
+      } else {
+        console.error("Грешка при запис в базата");
+      }
+    } catch (error) {
+      console.error("Мрежова грешка:", error);
+    }
+  };
+
   return (
     <div
       style={{
@@ -14,7 +42,7 @@ const ProductPage = ({ products, title }) => {
       }}
     >
       <h1>{title}</h1>
-      <br></br>
+      <br />
       <div
         className="product-grid"
         style={{ display: "flex", gap: "3rem", flexWrap: "wrap" }}
@@ -35,13 +63,13 @@ const ProductPage = ({ products, title }) => {
               {product.description && (
                 <p className="card-text">{product.description}</p>
               )}
-              <a
-                href="#"
+              <button
                 className="btn btn-primary"
+                onClick={() => handlePurchase(product.name)}
                 style={{ fontSize: "1.4rem", padding: "0.75rem 1.5rem" }}
               >
                 Купи
-              </a>
+              </button>
             </div>
           </div>
         ))}

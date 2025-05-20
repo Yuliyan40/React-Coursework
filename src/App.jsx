@@ -48,6 +48,8 @@ import Register from "./register";
 import LogIn from "./login";
 import Profile from "./profile";
 
+import Purchase from "./purchase";
+
 function App() {
   const [userChanged, setUserChanged] = useState(false);
 
@@ -69,6 +71,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
 
         <Route path="/:category/:name" element={<DynamicProductPage />} />
+
+        <Route path="/purchase" element={<Purchase />} />
 
         {/* 
         <Route path="/metal/a7x" element={<A7XPage />} />
